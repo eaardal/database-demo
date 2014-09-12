@@ -9,9 +9,14 @@ namespace DatabaseDemo.EFCrudRepository
     {
         public static void Wire(IUnityContainer container)
         {
-            container.RegisterType<ICrudRepository, EntityFrameworkCrudRepository<PeopleContext>>();
             container.RegisterType<IPeopleContext, PeopleContext>();
+            container.RegisterType<ICrudRepository, EntityFrameworkCrudRepository<PeopleContext>>();
+            
+            // For use when running the database normally (no initialization logic)
             container.RegisterType<IDatabaseInitializer<PeopleContext>, NullDatabaseInitializer<PeopleContext>>();
+
+            // For use when re-creating the database e.x with a drop-create script/console app (this would then be in another Bootstrapper for that script/app)
+            //container.RegisterType<IDatabaseInitializer<PeopleContext>, DropCreatePeopleDbInitializer>();
         }
     }
 }

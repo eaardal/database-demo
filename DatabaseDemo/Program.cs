@@ -1,8 +1,5 @@
 ﻿using System;
-using DatabaseDemo.EFCrudRepository;
-using DatabaseDemo.Repositories;
 using Microsoft.Practices.ServiceLocation;
-using Microsoft.Practices.Unity;
 
 namespace DatabaseDemo
 {
@@ -16,11 +13,10 @@ namespace DatabaseDemo
 
             var ioc = ServiceLocator.Current;
 
-            var repo = ioc.GetInstance<IPeopleRepository>();
-
-            repo.GetPeopleOver30YearsOld().ForEach(p => Console.WriteLine(p.FirstName + " " + p.LastName + " is over 30 years old"));
+            var demo = ioc.GetInstance<IDemo>();
+            demo.Run();
             
-            Console.WriteLine("Done");
+            Console.WriteLine("Press any key to exit");
             Console.ReadLine();
         }
     }
