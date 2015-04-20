@@ -1,4 +1,7 @@
-﻿using DatabaseDemo.EFCrudRepository;
+﻿using System.Data.Entity;
+using DatabaseDemo.Contracts;
+using DatabaseDemo.EFCrudRepository;
+using DatabaseDemo.EFCrudRepository.DbContexts;
 using DatabaseDemo.NHibernateCrudRepository;
 using DatabaseDemo.Repositories;
 using Microsoft.Practices.ServiceLocation;
@@ -12,15 +15,14 @@ namespace DatabaseDemo
         {
             IUnityContainer container = new UnityContainer();
 
-            // Let third party dependency libraries wire themselves up to avoid clutter up core bootstrapper and dependencies/references to thirdparty libraries
-            EFCrudRepositoryBootstrapper.Wire(container);
-            NHibernateCrudRepositoryBootstrapper.Wire(container);
+            container.RegisterType<IPeopleContext, PeopleContext>();
+            container.RegisterType<ICrudRepository, EntityFrameworkCrudRepository<PeopleContext>>();
 
-            // Register core domain dependencies
+            container.RegisterType<IDatabaseInitializer<PeopleContext>, NullDatabaseInitializer<PeopleContext>>();
+
             container.RegisterType<IPeopleRepository, PeopleRepository>();
             container.RegisterType<IDemo, Demo>();
 
-            // Get rid of Unity dependencies. Use common ServiceLocator implementation which is supported by many IoC containers
             var unityServiceLocator = new UnityServiceLocator(container);
             ServiceLocator.SetLocatorProvider(() => unityServiceLocator);
         }

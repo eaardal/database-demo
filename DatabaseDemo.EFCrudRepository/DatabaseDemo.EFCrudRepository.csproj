@@ -55,11 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EFCrudRepositoryBootstrapper.cs" />
     <Compile Include="DbContexts\IPeopleContext.cs" />
     <Compile Include="DbContexts\PeopleContext.cs" />
     <Compile Include="DbInitializers\DropCreatePeopleDbInitializer.cs" />
     <Compile Include="DbMappings\PersonMapping.cs" />
+    <Compile Include="EntityFrameworkCompleteRepository.cs" />
     <Compile Include="EntityFrameworkCrudRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,7 +74,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

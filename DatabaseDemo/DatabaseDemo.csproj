@@ -58,6 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Demo.cs" />
+    <Compile Include="IDemo.cs" />
+    <Compile Include="Repositories\CarsRepository.cs" />
+    <Compile Include="Repositories\ICarsRepository.cs" />
     <Compile Include="Repositories\IPeopleRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +83,10 @@
     <ProjectReference Include="..\DatabaseDemo.EFCrudRepository\DatabaseDemo.EFCrudRepository.csproj">
       <Project>{67B44FCB-7E9F-4722-9CFD-C32062134E56}</Project>
       <Name>DatabaseDemo.EFCrudRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatabaseDemo.NHibernateCrudRepository\DatabaseDemo.NHibernateCrudRepository.csproj">
+      <Project>{BD74DAC1-326A-4410-9BF6-C72BC930781A}</Project>
+      <Name>DatabaseDemo.NHibernateCrudRepository</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
