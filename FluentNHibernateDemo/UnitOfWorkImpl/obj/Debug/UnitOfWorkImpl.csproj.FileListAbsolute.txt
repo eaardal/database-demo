@@ -1,0 +1,10 @@
+C:\Dev\Demos\FluentNHibernateDemo\UnitOfWorkImpl\bin\Debug\UnitOfWorkImpl.dll
+C:\Dev\Demos\FluentNHibernateDemo\UnitOfWorkImpl\bin\Debug\UnitOfWorkImpl.pdb
+C:\Dev\Demos\FluentNHibernateDemo\UnitOfWorkImpl\bin\Debug\FluentNHibernate.dll
+C:\Dev\Demos\FluentNHibernateDemo\UnitOfWorkImpl\bin\Debug\NHibernate.dll
+C:\Dev\Demos\FluentNHibernateDemo\UnitOfWorkImpl\bin\Debug\FluentNHibernate.pdb
+C:\Dev\Demos\FluentNHibernateDemo\UnitOfWorkImpl\bin\Debug\FluentNHibernate.xml
+C:\Dev\Demos\FluentNHibernateDemo\UnitOfWorkImpl\bin\Debug\NHibernate.xml
+C:\Dev\Demos\FluentNHibernateDemo\UnitOfWorkImpl\obj\Debug\UnitOfWorkImpl.csprojResolveAssemblyReference.cache
+C:\Dev\Demos\FluentNHibernateDemo\UnitOfWorkImpl\obj\Debug\UnitOfWorkImpl.dll
+C:\Dev\Demos\FluentNHibernateDemo\UnitOfWorkImpl\obj\Debug\UnitOfWorkImpl.pdb

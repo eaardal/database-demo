@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22609.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentNHibernateDemo", "FluentNHibernateDemo\FluentNHibernateDemo.csproj", "{E0BEBA17-0310-4B94-8AA2-E7A03AFD4F01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWorkImpl", "UnitOfWorkImpl\UnitOfWorkImpl.csproj", "{9D32E7F6-0C70-440C-8E34-A5B055E0366A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0BEBA17-0310-4B94-8AA2-E7A03AFD4F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0BEBA17-0310-4B94-8AA2-E7A03AFD4F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0BEBA17-0310-4B94-8AA2-E7A03AFD4F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0BEBA17-0310-4B94-8AA2-E7A03AFD4F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D32E7F6-0C70-440C-8E34-A5B055E0366A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D32E7F6-0C70-440C-8E34-A5B055E0366A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D32E7F6-0C70-440C-8E34-A5B055E0366A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D32E7F6-0C70-440C-8E34-A5B055E0366A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

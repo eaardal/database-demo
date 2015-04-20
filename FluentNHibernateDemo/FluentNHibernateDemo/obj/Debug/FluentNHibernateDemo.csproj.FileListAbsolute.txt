@@ -1,0 +1,17 @@
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\FluentNHibernateDemo.exe.config
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\FluentNHibernateDemo.exe
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\FluentNHibernateDemo.pdb
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\FluentNHibernate.dll
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\Iesi.Collections.dll
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\NHibernate.dll
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\FluentNHibernate.pdb
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\FluentNHibernate.xml
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\Iesi.Collections.xml
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\NHibernate.xml
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\obj\Debug\FluentNHibernateDemo.exe
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\obj\Debug\FluentNHibernateDemo.pdb
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\Autofac.dll
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\UnitOfWorkImpl.dll
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\UnitOfWorkImpl.pdb
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\bin\Debug\Autofac.xml
+C:\Dev\Demos\FluentNHibernateDemo\FluentNHibernateDemo\obj\Debug\FluentNHibernateDemo.csprojResolveAssemblyReference.cache
