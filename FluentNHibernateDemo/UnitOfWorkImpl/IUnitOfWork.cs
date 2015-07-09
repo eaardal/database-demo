@@ -6,6 +6,6 @@ namespace UnitOfWorkImpl
     {
         void Commit();
         void Rollback();
-        IUnitOfWork StartTransaction();
+        TService ResolveRepository<TService>();
     }
 }

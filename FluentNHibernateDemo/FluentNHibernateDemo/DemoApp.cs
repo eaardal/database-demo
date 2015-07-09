@@ -6,42 +6,41 @@ namespace FluentNHibernateDemo
 {
     class DemoApp
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IPersonRepository _personRepository;
-        private readonly IEmailRepository _emailRepository;
+        private readonly IUnitOfWorkFactory _unitOfWorkFactory;
 
-        public DemoApp(IUnitOfWork unitOfWork, IPersonRepository personRepository, IEmailRepository emailRepository)
+        public DemoApp(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            if (unitOfWork == null) throw new ArgumentNullException("unitOfWork");
-            if (personRepository == null) throw new ArgumentNullException("personRepository");
-            if (emailRepository == null) throw new ArgumentNullException("emailRepository");
+            if (unitOfWorkFactory == null) throw new ArgumentNullException("unitOfWorkFactory");
 
-            _unitOfWork = unitOfWork;
-            _personRepository = personRepository;
-            _emailRepository = emailRepository;
+            _unitOfWorkFactory = unitOfWorkFactory;
         }
 
         public void Run()
         {
             try
             {
-                using (var transaction = _unitOfWork.StartTransaction())
+                using (var uow = _unitOfWorkFactory.CreateUnitOfWork())
                 {
-                    _personRepository.InsertOrUpdate(new Person { Firstname = "John", Lastname = "Smith", Age = 20 });
-                    _personRepository.InsertOrUpdate(new Person { Firstname = "Jack", Lastname = "Lee", Age = 30 });
-                    _personRepository.InsertOrUpdate(new Person { Firstname = "Sarah", Lastname = "Kent", Age = 40 });
+                    var personRepository = uow.ResolveRepository<IPersonRepository>();
 
-                    transaction.Commit();
+                    personRepository.InsertOrUpdate(new Person { Firstname = "John", Lastname = "Smith", Age = 20 });
+                    personRepository.InsertOrUpdate(new Person { Firstname = "Jack", Lastname = "Lee", Age = 30 });
+                    personRepository.InsertOrUpdate(new Person { Firstname = "Sarah", Lastname = "Kent", Age = 40 });
+
+                    uow.Commit();
                 }
 
-                using (var transaction = _unitOfWork.StartTransaction())
+                using (var uow = _unitOfWorkFactory.CreateUnitOfWork())
                 {
-                    var jack = _personRepository.GetAll().First(p => p.Firstname == "Jack");
-                    _personRepository.Delete(jack);
+                    var personRepository = uow.ResolveRepository<IPersonRepository>();
+                    var emailRepository = uow.ResolveRepository<IEmailRepository>();
 
-                    _emailRepository.InsertOrUpdate(new Email { Sender = "jack@lee.com", Receiver = "sarah@kent.com", Subject = "hi", Body = "hello world" });
+                    var jack = personRepository.GetAll().First(p => p.Firstname == "Jack");
+                    personRepository.Delete(jack);
 
-                    transaction.Commit();
+                    emailRepository.InsertOrUpdate(new Email { Sender = "jack@lee.com", Receiver = "sarah@kent.com", Subject = "hi", Body = "hello world" });
+
+                    uow.Commit();
                 }
             }
             catch (Exception ex)

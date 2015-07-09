@@ -1,4 +1,6 @@
-﻿namespace UnitOfWorkImpl
+﻿using System;
+
+namespace UnitOfWorkImpl
 {
     public interface ITransactionProvider<in T>
     {

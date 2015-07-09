@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.22609.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentNHibernateDemo", "FluentNHibernateDemo\FluentNHibernateDemo.csproj", "{E0BEBA17-0310-4B94-8AA2-E7A03AFD4F01}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWorkImpl", "UnitOfWorkImpl\UnitOfWorkImpl.csproj", "{9D32E7F6-0C70-440C-8E34-A5B055E0366A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWorkImpl.Infrastructure", "UnitOfWorkImpl.Infrastructure\UnitOfWorkImpl.Infrastructure.csproj", "{DB8FCA70-3FF3-4926-91B8-3EB6625F6D7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9D32E7F6-0C70-440C-8E34-A5B055E0366A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D32E7F6-0C70-440C-8E34-A5B055E0366A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D32E7F6-0C70-440C-8E34-A5B055E0366A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB8FCA70-3FF3-4926-91B8-3EB6625F6D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB8FCA70-3FF3-4926-91B8-3EB6625F6D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB8FCA70-3FF3-4926-91B8-3EB6625F6D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB8FCA70-3FF3-4926-91B8-3EB6625F6D7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

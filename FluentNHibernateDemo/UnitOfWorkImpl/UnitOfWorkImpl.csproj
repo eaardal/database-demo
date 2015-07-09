@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UnitOfWorkImpl</RootNamespace>
     <AssemblyName>UnitOfWorkImpl</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,12 +53,13 @@
     <Compile Include="IEmailRepository.cs" />
     <Compile Include="IPersonRepository.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="ISessionInjectable.cs" />
     <Compile Include="ISessionAdapter.cs" />
-    <Compile Include="ISessionAdapterRegistrator.cs" />
     <Compile Include="ISessionProvider.cs" />
     <Compile Include="ITransactionAdapter.cs" />
     <Compile Include="ITransactionProvider.cs" />
     <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="IUnitOfWorkFactory.cs" />
     <Compile Include="NHibernateCrudRepository.cs" />
     <Compile Include="NHibernateSessionAdapter.cs" />
     <Compile Include="NHibernateSessionProvider.cs" />
@@ -70,6 +72,14 @@
     <Compile Include="SqlExpressSessionFactory.cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWorkException.cs" />
+    <Compile Include="UnitOfWorkFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UnitOfWorkImpl.Infrastructure\UnitOfWorkImpl.Infrastructure.csproj">
+      <Project>{db8fca70-3ff3-4926-91b8-3eb6625f6d7e}</Project>
+      <Name>UnitOfWorkImpl.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

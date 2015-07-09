@@ -9,19 +9,20 @@ namespace UnitOfWorkImpl
 {
     public class NHibernateSessionProvider : ISessionProvider<ISession>
     {
-        private readonly ISessionAdapterRegistrator<ISession> _sessionRegistrator;
+        //private readonly ISessionAdapterRegistrator<ISession> _sessionRegistrator;
 
-        public NHibernateSessionProvider(ISessionAdapterRegistrator<ISession> sessionRegistrator)
-        {
-            if (sessionRegistrator == null) throw new ArgumentNullException("sessionRegistrator");
-            _sessionRegistrator = sessionRegistrator;
-        }
+        //public NHibernateSessionProvider(ISessionAdapterRegistrator<ISession> sessionRegistrator)
+        //{
+        //    if (sessionRegistrator == null) throw new ArgumentNullException("sessionRegistrator");
+        //    _sessionRegistrator = sessionRegistrator;
+        //}
 
         public ISessionAdapter<ISession> OpenSession()
         {
             var factory = SqlExpressSessionFactory.CreateFactory();
             var session = factory.OpenSession();
-            return _sessionRegistrator.SetSession(session);
+            return new NHibernateSessionAdapter(session);
+            //return _sessionRegistrator.SetSession(session);
         }
     }
 }

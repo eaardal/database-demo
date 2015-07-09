@@ -6,7 +6,7 @@ using NHibernate.Linq;
 
 namespace UnitOfWorkImpl
 {
-    public class NHibernateCrudRepository : ICrudRepository
+    public class NHibernateCrudRepository : ICrudRepository, ISessionInjectable
     {
         private readonly ISessionAdapter<ISession> _session;
 
@@ -35,5 +35,7 @@ namespace UnitOfWorkImpl
         {
             _session.CurrentSession.Delete(entity);
         }
+
+        public ISessionAdapter<ISession> Session { get { return _session; } }
     }
 }

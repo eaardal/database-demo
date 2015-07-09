@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Autofac;
 using NHibernate;
 using UnitOfWorkImpl;
+using UnitOfWorkImpl.Infrastructure;
 
 namespace FluentNHibernateDemo
 {
@@ -24,20 +25,18 @@ namespace FluentNHibernateDemo
 
             builder.RegisterAssemblyTypes(appAssemblies)
                 .Except<IoC>()
-                .Except<ISessionAdapter<ISession>>()
+                .Except<NHibernateTransactionProvider>()
+                .Except<NHibernateSessionProvider>()
+                .Except<NHibernateSessionAdapter>()
                 .AsImplementedInterfaces()
                 .AsSelf();
-            
+
+            builder.RegisterType<IoC>().AsImplementedInterfaces().SingleInstance();
             builder.RegisterType<UnitOfWork<ISession>>().As<IUnitOfWork>();
             builder.RegisterType<NHibernateTransactionProvider>().As<ITransactionProvider<ISession>>();
             builder.RegisterType<NHibernateSessionProvider>().As<ISessionProvider<ISession>>();
-            builder.RegisterType<NHibernateSessionAdapter>()
-                .As<ISessionAdapter<ISession>>()
-                .As<ISessionAdapterRegistrator<ISession>>()
-                .SingleInstance();
-
-            builder.RegisterType<IoC>().AsImplementedInterfaces().SingleInstance();
-
+            builder.RegisterType<NHibernateSessionAdapter>().As<ISessionAdapter<ISession>>(); //.As<ISessionAdapterRegistrator<ISession>>();
+            
             var container = builder.Build();
 
             var ioc = container.Resolve<IIoC>();

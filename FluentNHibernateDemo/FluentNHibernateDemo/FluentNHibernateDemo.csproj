@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FluentNHibernateDemo</RootNamespace>
     <AssemblyName>FluentNHibernateDemo</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,8 +57,6 @@
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="DemoApp.cs" />
-    <Compile Include="IIoC.cs" />
-    <Compile Include="IoC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,6 +65,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UnitOfWorkImpl.Infrastructure\UnitOfWorkImpl.Infrastructure.csproj">
+      <Project>{DB8FCA70-3FF3-4926-91B8-3EB6625F6D7E}</Project>
+      <Name>UnitOfWorkImpl.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UnitOfWorkImpl\UnitOfWorkImpl.csproj">
       <Project>{9D32E7F6-0C70-440C-8E34-A5B055E0366A}</Project>
       <Name>UnitOfWorkImpl</Name>

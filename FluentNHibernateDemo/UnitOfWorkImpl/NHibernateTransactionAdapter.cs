@@ -21,6 +21,11 @@ namespace UnitOfWorkImpl
             _transaction.Commit();
         }
 
-        public bool IsActive => _transaction.IsActive;
+        public bool IsActive {get { return _transaction.IsActive; }}
+        
+        public void Dispose()
+        {
+            _transaction.Dispose();
+        }
     }
 }
