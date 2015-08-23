@@ -3,7 +3,7 @@ using DatabaseDemo.DomainModel;
 
 namespace DatabaseDemo.EFCrudRepository.DbContexts
 {
-    public interface IPeopleContext
+    public interface IDemoAppDatabaseContext
     {
         IDbSet<Person> People { get; set; }
     }

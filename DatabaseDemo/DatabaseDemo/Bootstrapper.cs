@@ -2,6 +2,7 @@
 using DatabaseDemo.Contracts;
 using DatabaseDemo.EFCrudRepository;
 using DatabaseDemo.EFCrudRepository.DbContexts;
+using DatabaseDemo.EFCrudRepository.DbInitializers;
 using DatabaseDemo.NHibernateCrudRepository;
 using DatabaseDemo.Repositories;
 using Microsoft.Practices.ServiceLocation;
@@ -15,11 +16,13 @@ namespace DatabaseDemo
         {
             IUnityContainer container = new UnityContainer();
 
-            container.RegisterType<IPeopleContext, PeopleContext>();
-            container.RegisterType<ICrudRepository, EntityFrameworkCrudRepository<PeopleContext>>();
+            container.RegisterType<IDemoAppDatabaseContext, DemoAppDatabaseContext>();
+            container.RegisterType<ICrudRepository, EntityFrameworkCrudRepository<DemoAppDatabaseContext>>();
 
-            container.RegisterType<IDatabaseInitializer<PeopleContext>, NullDatabaseInitializer<PeopleContext>>();
+            container.RegisterType<IDatabaseInitializer<DemoAppDatabaseContext>, NullDatabaseInitializer<DemoAppDatabaseContext>>();
+            //container.RegisterType<IDatabaseInitializer<DemoAppDatabaseContext>, DropCreateDatabaseInitializer>();
 
+            container.RegisterType<ICityRepository, CityRepository>();
             container.RegisterType<IPeopleRepository, PeopleRepository>();
             container.RegisterType<IDemo, Demo>();
 

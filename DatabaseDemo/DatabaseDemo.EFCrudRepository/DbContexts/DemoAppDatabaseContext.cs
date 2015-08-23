@@ -4,12 +4,13 @@ using DatabaseDemo.EFCrudRepository.DbMappings;
 
 namespace DatabaseDemo.EFCrudRepository.DbContexts
 {
-    public class PeopleContext : DbContext, IPeopleContext
+    public class DemoAppDatabaseContext : DbContext, IDemoAppDatabaseContext
     {
         public IDbSet<Person> People { get; set; }
+        public IDbSet<City> Cities { get; set; }
 
-        public PeopleContext(IDatabaseInitializer<PeopleContext> initializer)
-            : base("eaardal-db-connectionstring")
+        public DemoAppDatabaseContext(IDatabaseInitializer<DemoAppDatabaseContext> initializer)
+            : base("default")
         {
             Database.SetInitializer(initializer);
             Database.Initialize(true);
@@ -18,6 +19,7 @@ namespace DatabaseDemo.EFCrudRepository.DbContexts
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new PersonMapping());
+            modelBuilder.Configurations.Add(new CityMapping());
 
             base.OnModelCreating(modelBuilder);
         }

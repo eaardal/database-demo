@@ -55,9 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbContexts\IPeopleContext.cs" />
-    <Compile Include="DbContexts\PeopleContext.cs" />
-    <Compile Include="DbInitializers\DropCreatePeopleDbInitializer.cs" />
+    <Compile Include="DbContexts\IDemoAppDatabaseContext.cs" />
+    <Compile Include="DbContexts\DemoAppDatabaseContext.cs" />
+    <Compile Include="DbInitializers\DropCreateDatabaseInitializer.cs" />
+    <Compile Include="DbMappings\CityMapping.cs" />
     <Compile Include="DbMappings\PersonMapping.cs" />
     <Compile Include="EntityFrameworkCompleteRepository.cs" />
     <Compile Include="EntityFrameworkCrudRepository.cs" />

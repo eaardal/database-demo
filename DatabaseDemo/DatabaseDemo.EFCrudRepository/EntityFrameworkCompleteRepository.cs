@@ -14,7 +14,7 @@ namespace DatabaseDemo.EFCrudRepository
 
         public EntityFrameworkCompleteRepository(TContext context)
         {
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
             _context = context;
         }
 

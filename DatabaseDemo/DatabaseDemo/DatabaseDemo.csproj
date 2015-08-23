@@ -60,8 +60,8 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Demo.cs" />
     <Compile Include="IDemo.cs" />
-    <Compile Include="Repositories\CarsRepository.cs" />
-    <Compile Include="Repositories\ICarsRepository.cs" />
+    <Compile Include="Repositories\CityRepository.cs" />
+    <Compile Include="Repositories\ICityRepository.cs" />
     <Compile Include="Repositories\IPeopleRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
